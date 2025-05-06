@@ -41,5 +41,12 @@
 		celular Motorola
 	</h2>
 	
+	<h2>
+		headphones
+	</h2>
+
+	<h2>
+		capinhas de celular
+	</h2>
 </main>
-<footer>Footer do site</footer>
+<footer>Rodapé do site</footer>

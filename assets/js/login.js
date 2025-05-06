@@ -1,6 +1,6 @@
-function validaFormulario(){
-	var email = document.querySelector("#emailLogin").value;
-	var senha = document.querySelector("#senhaLogin").value;
+function validaFormulario(){	
+	var email = document.querySelector("#email").value;
+	var senha = document.querySelector("#senha").value;
 
 	if(email == ""){
 		alert("Digite seu email:");

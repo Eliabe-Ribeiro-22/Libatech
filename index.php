@@ -11,10 +11,19 @@
 </header>
 
 	<main>
-		Página inicial do site
+		<h1>Bem-vindo a Labetech</h1>
+		<h2>Uma loja virtual de informática</h2>
+
+	<p>
+		Vendemos: capinhas de celular, celulares, impressoras, mouses, headphones e teclados.
+	</p>
+
+	<p>
+		compre pela internet e receba em casa pelo mercado livre
+	</p>
 	</main>
 
-<footer>Footer do site</footer>
+<footer>Rodapé do site</footer>
 
 <?php
 sesssion_start();
