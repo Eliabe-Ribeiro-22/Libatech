@@ -10,13 +10,15 @@ h1{
 
 form{
 	width: 50vw;
-	background: red;
+	background: #00a7cb;
 	margin: 0 25vw;
 }
 
 form label{
 	display: block;
 	text-align: center;
+	color: white;
+	font-family: "Arial";
 }
 
 form input{
@@ -24,8 +26,11 @@ form input{
 	margin: 10px 0px;
 	border: 7px double black;
 	border-radius: 10vw;
+	background: #7ce6fd;
 }
 
-form input#BtnEnviar{
+form input#btnEnviar{
+	background: #00a3ff;
+	cursor: pointer;
 
 }
