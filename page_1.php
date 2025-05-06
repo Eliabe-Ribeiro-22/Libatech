@@ -17,5 +17,4 @@
 <a href="page_2.php">Acesse a página logada 2</a>
 <?php
 session_start();
-$_SESSION['logado'] = true;
 require_once 'cabe.php';

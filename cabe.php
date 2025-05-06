@@ -21,19 +21,4 @@ function verificar_logado($logado)
 verificar_logado($_SESSION['logado']);
 
 
-if(isset($_POST)){
-	// armazena a variavel email em $email
-	$email = $_POST['email'];
-	// limpando espaços em branco antes e depois do email
-	$email = trim($email);
-
-	// armazena a variavel senha em $senha
-	$senha = $_POST['senha'];
-	// limpando espaços em branco antes e depois de senha	
-	$senha = trim($senha);
-
-	
-
-}
-
 ?>
