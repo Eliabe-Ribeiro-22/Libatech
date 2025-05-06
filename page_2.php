@@ -1,3 +1,4 @@
+<title>Página 2</title>
 <header>
 		<nav>
 			<ul>
@@ -10,13 +11,11 @@
 		</nav>	
 </header>
 
-	<main>
-		Página inicial do site
-	</main>
-
-<footer>Footer do site</footer>
+<h1>Área Logada 2</h1>
+<h2>Bem-vindo ao nosso sistema de loja virtual</h2>
+<a href="page_1.php">Acesse a página logada 1</a>
 
 <?php
-sesssion_start();
-set_time_limit(30);
-$_SESSION['logado'] = false;
+session_start();
+$_SESSION['logado'] = true;
+require_once 'cabe.php';

@@ -10,13 +10,36 @@
 		</nav>	
 </header>
 
-	<main>
-		Página inicial do site
-	</main>
+<main>
+	<h1>Nossos produtos</h1>
 
+	<h2>
+		Mouse gamer
+	</h2>
+
+	<h2>
+		Impressora HP
+	</h2>
+	
+	<h2>
+		Teclado gamer
+	</h2>
+
+	<h2>
+		celular Iphone
+	</h2>
+	
+	<h2>
+		celular Samsung
+	</h2>
+	
+	<h2>
+		celular LG
+	</h2>
+	
+	<h2>
+		celular Motorola
+	</h2>
+	
+</main>
 <footer>Footer do site</footer>
-
-<?php
-sesssion_start();
-set_time_limit(30);
-$_SESSION['logado'] = false;

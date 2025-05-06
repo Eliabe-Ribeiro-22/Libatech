@@ -13,7 +13,7 @@
 			<ul>
 				<li><a href="./index.php">Início</a></li>
 				<li><a href="#">Quem somos</a></li>
-				<li><a href="#">Produtos</a></li>
+				<li><a href="./produtos.php">Produtos</a></li>
 				<li><a href="./login.php">Fazer login</a></li>
 				<li><a href="#">Cadastrar</a></li>			
 			</ul>
@@ -25,11 +25,11 @@
 		<h2>
 			Por gentileza, insira seu email e senha para acessar a área logada
 		</h2>
-		<form method="POST" action="logged-area.html" onsubmit="return validaFormulario()">
+		<form method="POST" action="page_1.php"> <!--onsubmit="return validaFormulario()"> -->
 			<label>Email:</label>
-			<input type="email" name="emailLogin" id="emailLogin">
+			<input type="email" name="email" id="email">
 			<label>Senha: </label>
-			<input type="password" name="senhaLogin" id="senhaLogin">
+			<input type="password" name="senha" id="senha">
 			<input type="submit" name="btnEnviar" id="btnEnviar" placeholder="enviar" value="Enviar">
 		</form>
 	</main>
@@ -39,3 +39,10 @@
 	<script type="text/javascript" src="assets/js/login.js"></script>
 </body>
 </html>
+
+<?php
+session_start();
+$_SESSION['logado'] = false;
+
+//echo "</script> alert('Entrou PHP')</script>";
+?>
