@@ -1,3 +1,13 @@
+<?php
+if($_SESSION['logado'] == false){
+	header("refresh: 0; login.php")
+}
+else{
+	session_start();
+	require_once 'cabe.php';
+}
+?>
+
 <title>Página 1</title>
 
 <header>
@@ -15,6 +25,4 @@
 <h1>Área Logada 1</h1>
 <h2>Bem-vindo ao nosso sistema de loja virtual</h2>
 <a href="page_2.php">Acesse a página logada 2</a>
-<?php
-session_start();
-require_once 'cabe.php';
+
