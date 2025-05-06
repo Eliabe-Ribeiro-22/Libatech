@@ -1,3 +1,31 @@
 *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1{
+	text-align: center;
+}
+
+form{
+	width: 50vw;
 	background: red;
+	margin: 0 25vw;
+}
+
+form label{
+	display: block;
+	text-align: center;
+}
+
+form input{
+	width: 100%;
+	margin: 10px 0px;
+	border: 7px double black;
+	border-radius: 10vw;
+}
+
+form input#BtnEnviar{
+
 }
