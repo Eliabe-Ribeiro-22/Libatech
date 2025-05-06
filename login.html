@@ -14,15 +14,17 @@
 	
 	<main>
 		<h1>Principal da tela de login</h1>
-		<form method="POST" action="#">
+		<form method="POST" action="#" onsubmit="validaFormulario()">
 			<label>Email:</label>
-			<input type="email" name="emailLogin">
+			<input type="email" name="emailLogin" id="emailLogin">
 			<label>Senha: </label>
-			<input type="password" name="senhaLogin">
+			<input type="password" name="senhaLogin" id="senhaLogin">
 			<input type="submit" name="btnEnviar" id="btnEnviar" placeholder="enviar" value="Enviar">
 		</form>
 	</main>
 
 	<footer>Footer do site</footer>
+
+	<script type="text/javascript" src="assets/js/login.js"></script>
 </body>
 </html>
