@@ -9,12 +9,23 @@
 <body>
 
 	<header>
-		<nav>Cabeçalho do site</nav>	
+		<nav>
+			<ul>
+				<li><a href="#">Início</a></li>
+				<li><a href="#">Quem somos</a></li>
+				<li><a href="#">Produtos</a></li>
+				<li><a href="#">Fazer login</a></li>
+				<li><a href="#">Cadastrar</a></li>			
+			</ul>
+		</nav>	
 	</header>
 	
 	<main>
-		<h1>Principal da tela de login</h1>
-		<form method="POST" action="#" onsubmit="validaFormulario()">
+		<h1>Fazer Login</h1>
+		<h2>
+			Por gentileza, insira seu email e senha para acessar a área logada
+		</h2>
+		<form method="POST" action="logged-area.html" onsubmit="return validaFormulario()">
 			<label>Email:</label>
 			<input type="email" name="emailLogin" id="emailLogin">
 			<label>Senha: </label>
