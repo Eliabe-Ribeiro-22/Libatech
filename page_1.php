@@ -1,10 +1,13 @@
 <?php
-if($_SESSION['logado'] == false){
-	header("refresh: 0; login.php")
+$_SESSION["logado"] = true;
+if($_SESSION['logado'] == true){
+	echo "acessou página logada";
+	session_start();
+	//require_once 'cabe.php';
 }
 else{
-	session_start();
-	require_once 'cabe.php';
+	echo "usuário não autorizado. Voltar ao login";
+	header("refresh: 0; login.php");
 }
 ?>
 

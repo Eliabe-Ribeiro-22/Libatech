@@ -41,9 +41,9 @@
 </html>
 
 <?php
-session_start();
+//sem usar config nem cabe.php
 $_SESSION['logado'] = false;
-
+//require_once "./cabe.php";
 
 //Funcoes para incluir dados através de $_POST
 function post_usuario()
@@ -68,26 +68,57 @@ if(isset($_POST)){
 	$email = $_POST['email'];
 	// limpando espaços em branco antes e depois do email
 	$email = trim($email);
+	echo $email;
 
 	// armazena a variavel senha em $senha
 	$senha = $_POST['senha'];
 	// limpando espaços em branco antes e depois de senha	
 	$senha = trim($senha);
-	//foreach usuarios array
-// verifica se a senha está correta
-if($senha == $_POST['usuarios'][1]['senha']){
-	$_SESSION['logado'] = true;
-	// se sim, abrir página logada 1;
-	header("refresh: 10;page_1.php");
-	//link para acessar páginas logadas
-	echo "<a href='./page_1.php'></a>";
-	echo "<a href='./page_2.php'></a>";
-}
-else{
-	$nome = post_usuario();
-	$senha = post_senha();
-	header("refresh: 10;login.php");
-}
+	echo $senha;
 
+	//Funcao dos codigos abaixo:   permitir o login de mais de um usuario. 
+  	// Aqui eu pesquiso na array usuarios,  o usuario informado por quem acessa a tela de login.
+	//$key = array_search($_SESSION['usuarios'], array_column($_SESSION['usuarios'], 'usuario'));
+
+	//$usuarios = [
+//	1 => [
+//		"email" => "teste@gmail.com",
+//		"senha" => "1234",
+//	]
+//	2 => [
+//		"email" => "eliaberibeiro06@gmail.com",
+		//"senha" => "1234",
+//	]
+//];
+		$usuarios = [
+			1 => [
+				"email" => "teste@gmail.com",
+				"senha" => "1234",
+			],
+			2 => [
+				"email" => "eliaberibeiro06@gmail.com",
+				"senha" => "1234",
+			]
+		];
+	//foreach usuarios array
+	foreach ($usuarios as $key => $value) {
+		// verifica se a senha está correta
+		echo "<br>" . $key . "<br>";
+		echo "<br>" . $value . "<br>";
+		if($senha == $usuarios[$key]['senha']){
+			echo "login com sucesso";
+			$_SESSION["logado"] = true;
+			// se sim, abrir página logada 1;
+			header("refresh: 5;page_1.php");
+			//link para acessar páginas logadas
+			echo "<a href='./page_1.php'></a>";
+			echo "<a href='./page_2.php'></a>";
+		}
+		else{
+			echo "login está errado";
+			$nome = post_usuario();
+			$senha = post_senha();
+			header("refresh: 10;login.php");
+		}
+	}
 }
-?>
