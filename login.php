@@ -101,11 +101,11 @@ if(isset($_POST)){
 			]
 		];
 	//foreach usuarios array
-	foreach ($usuarios as $key => $value) {
+	foreach ($usuarios as $key) {
 		// verifica se a senha está correta
-		echo "<br>" . $key . "<br>";
-		echo "<br>" . $value . "<br>";
-		if($senha == $usuarios[$key]['senha']){
+		echo "<br>" . $key["email"];
+		echo "<br>" . $key["senha"] . "<br>";
+		if($email == $usuarios[$key]["email"] && $senha == $usuarios[$key]['senha']){
 			echo "login com sucesso";
 			$_SESSION["logado"] = true;
 			// se sim, abrir página logada 1;

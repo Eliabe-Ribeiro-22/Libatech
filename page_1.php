@@ -1,16 +1,3 @@
-<?php
-$_SESSION["logado"] = true;
-if($_SESSION['logado'] == true){
-	echo "acessou página logada";
-	session_start();
-	//require_once 'cabe.php';
-}
-else{
-	echo "usuário não autorizado. Voltar ao login";
-	header("refresh: 0; login.php");
-}
-?>
-
 <title>Página 1</title>
 
 <header>
@@ -29,3 +16,15 @@ else{
 <h2>Bem-vindo ao nosso sistema de loja virtual</h2>
 <a href="page_2.php">Acesse a página logada 2</a>
 
+
+<?php
+
+if($_SESSION['logado'] == true){
+	echo "acessou página restrita e está logado";
+	session_start();
+	//require_once 'cabe.php';
+}
+else{
+	echo "usuário não autorizado. Voltar ao login";
+	header("refresh: 0; login.php");
+}
