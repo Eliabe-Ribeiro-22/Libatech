@@ -41,6 +41,7 @@
 </html>
 
 <?php
+session_start();
 //sem usar config nem cabe.php
 $_SESSION["logado"] = false;
 //require_once "./cabe.php";
