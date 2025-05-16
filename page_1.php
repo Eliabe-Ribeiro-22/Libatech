@@ -19,7 +19,7 @@
 
 <?php
 
-if($_SESSION['logado'] == true){
+if($_SESSION["logado"] == true){
 	echo "acessou página restrita e está logado";
 	session_start();
 	//require_once 'cabe.php';
