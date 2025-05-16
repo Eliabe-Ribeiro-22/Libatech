@@ -20,7 +20,6 @@
 <?php
 if($_SESSION["logado"] == true){
 	echo "acessou página logada";
-	session_start();
 //	require_once 'cabe.php';
 }
 else{
