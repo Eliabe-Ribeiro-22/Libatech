@@ -42,7 +42,7 @@
 
 <?php
 //sem usar config nem cabe.php
-$_SESSION['logado'] = false;
+$_SESSION["logado"] = false;
 //require_once "./cabe.php";
 
 //Funcoes para incluir dados através de $_POST
