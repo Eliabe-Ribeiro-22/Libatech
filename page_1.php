@@ -18,7 +18,6 @@
 
 
 <?php
-
 if($_SESSION["logado"] == true){
 	echo "acessou página restrita e está logado";
 	session_start();
