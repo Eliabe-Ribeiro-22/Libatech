@@ -25,12 +25,12 @@
 		<h2>
 			Por gentileza, insira seu email e senha para acessar a área logada
 		</h2>
-		<form method="POST" onsubmit="return validaFormulario()" action="">
+		<form method="POST" onsubmit="return validaFormulario()" action="./page_1.php">
 			<label>Email:</label>
 			<input type="email" name="email" id="email">
 			<label>Senha: </label>
 			<input type="password" name="senha" id="senha">
-			<input type="submit" name="btnEnviar" id="btnEnviar" placeholder="enviar" value="Enviar">
+			<input type="submit" name="enviar" id="enviar" placeholder="enviar" value="enviar">
 		</form>
 	</main>
 
@@ -42,9 +42,9 @@
 
 <?php
 session_start();
+
 //sem usar config nem cabe.php
-$_SESSION["logado"] = false;
-echo $_SESSION["logado"];
+$_SESSION["logado"] = true;
 //require_once "./cabe.php";
 
 //Funcoes para incluir dados através de $_POST
@@ -68,43 +68,42 @@ post_usuario();
 post_senha();
 // se tiver algum dado via POST
 function login(){
-	if(isset($_POST)){
+	$usuarios = [
+		"email" => "teste@gmail.com",
+		"senha" => "1234",
+	];
+
+	if(isset($_POST["enviar"])){
 		// armazena a variavel email em $email
 		$email = $_POST['email'];
 		// limpando espaços em branco antes e depois do email
 		$email = trim($email);
-		echo $email;
-
+		
 		// armazena a variavel senha em $senha
 		$senha = $_POST['senha'];
 		// limpando espaços em branco antes e depois de senha	
 		$senha = trim($senha);
-		echo $senha;
-		require_once "config.php";
+		//require_once "./config.php";
 
-	//foreach usuarios array
-	foreach ($_SESSION["usuarios"] as $key) {
 		// verifica se a senha está correta
-		if($email == $_SESSION["usuarios"][$key]["email"] && $senha == $_SESSION["usuarios"][$key]["senha"]){
-			echo "login com sucesso";
-			echo "<br>" . $key["email"];
-			echo "<br>" . $key["senha"] . "<br>";
-		
+		if($email == $usuarios["email"] && $senha == $usuarios["senha"]){
 			$_SESSION["logado"] = true;
-			echo $_SESSION["logado"];
+			echo "login com sucesso";
 			// se sim, abrir página logada 1;
 			header("refresh: 5;page_1.php");
 			//link para acessar páginas logadas
 			echo "<a href='./page_1.php'></a>";
 			echo "<a href='./page_2.php'></a>";
 		}
-		else{
+		else {
+			$_SESSION["logado"] = false;
 			echo "login está errado";
 			$nome = post_usuario();
 			$senha = post_senha();
-			header("refresh: 10;login.php");
+			header("refresh: 5;login.php");
 		}
 	}
 }
-}
-login();
+//problema com session
+// se comecar logado = true , ele não muda para false
+// se comecar logado = false, ele não mudar para true

@@ -18,6 +18,7 @@
 <a href="page_1.php">Acesse a página logada 1</a>
 
 <?php
+session_start();
 if($_SESSION["logado"] == true){
 	echo "acessou página logada";
 //	require_once 'cabe.php';
