@@ -25,7 +25,7 @@
 		<h2>
 			Por gentileza, insira seu email e senha para acessar a área logada
 		</h2>
-		<form method="POST" onsubmit="return validaFormulario()" action="./page_1.php">
+		<form method="POST" onsubmit="return validaFormulario()" action="">
 			<label>Email:</label>
 			<input type="email" name="email" id="email">
 			<label>Senha: </label>
@@ -43,31 +43,21 @@
 <?php
 session_start();
 
-//sem usar config nem cabe.php
-$_SESSION["logado"] = true;
-//require_once "./cabe.php";
+$_SESSION['logado'] = false;
+
 
 //Funcoes para incluir dados através de $_POST
-function post_usuario()
-{
-    if (isset($_POST['usuario'])) {
-        $usuario = $_POST['usuario'];
-        return $usuario;
-    }
-}
 
-function post_senha()
-{
-    if (isset($_POST['senha'])) {
-        $senha = $_POST['senha'];
-        return $senha;
-    }
-}
+//if (isset($_POST['email'])) {
+  //  $email = $_POST['email'];
+    //return $email;
+//}
+//if (isset($_POST['senha'])) {
+  //  $senha = $_POST['senha'];
+	//return $senha;
+//}
 
-post_usuario();
-post_senha();
 // se tiver algum dado via POST
-function login(){
 	$usuarios = [
 		"email" => "teste@gmail.com",
 		"senha" => "1234",
@@ -87,23 +77,19 @@ function login(){
 
 		// verifica se a senha está correta
 		if($email == $usuarios["email"] && $senha == $usuarios["senha"]){
-			$_SESSION["logado"] = true;
+			$_SESSION['logado'] = true;
 			echo "login com sucesso";
 			// se sim, abrir página logada 1;
-			header("refresh: 5;page_1.php");
+			header("refresh: 0;page_1.php");
 			//link para acessar páginas logadas
 			echo "<a href='./page_1.php'></a>";
 			echo "<a href='./page_2.php'></a>";
 		}
 		else {
-			$_SESSION["logado"] = false;
+			$_SESSION['logado'] = false;
 			echo "login está errado";
-			$nome = post_usuario();
-			$senha = post_senha();
-			header("refresh: 5;login.php");
+			//$nome = post_usuario();
+			//$senha = post_senha();
+			header("refresh: 0;login.php");
 		}
 	}
-}
-//problema com session
-// se comecar logado = true , ele não muda para false
-// se comecar logado = false, ele não mudar para true

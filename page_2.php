@@ -19,9 +19,8 @@
 
 <?php
 session_start();
-if($_SESSION["logado"] == true){
+if($logado == true){
 	echo "acessou página logada";
-//	require_once 'cabe.php';
 }
 else{
 	echo "usuário não autorizado. Voltar ao login";

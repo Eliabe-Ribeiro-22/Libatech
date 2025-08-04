@@ -19,14 +19,11 @@
 
 <?php
 session_start();
-if($_SESSION["logado"] == true){
+if($_SESSION['logado'] == true){
 	echo "acessou página restrita e está logado";
-	//require_once 'cabe.php';
-	//require_once "config.php";
-
+	echo 'ok';	
 }
 else{
-	//require_once "config.php";
 	echo "usuário não autorizado. Voltar ao login";
-	header("refresh: 0; login.php");
+	header("refresh: 6; login.php");
 }
