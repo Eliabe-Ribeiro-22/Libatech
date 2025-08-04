@@ -21,7 +21,6 @@
 session_start();
 if($_SESSION['logado'] == true){
 	echo "acessou página restrita e está logado";
-	echo 'ok';	
 }
 else{
 	echo "usuário não autorizado. Voltar ao login";

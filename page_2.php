@@ -1,5 +1,3 @@
-
-
 <title>Página 2</title>
 <header>
 		<nav>
@@ -19,8 +17,8 @@
 
 <?php
 session_start();
-if($logado == true){
-	echo "acessou página logada";
+if($_SESSION['logado'] == true){
+	echo "acessou página restrita e está logado";
 }
 else{
 	echo "usuário não autorizado. Voltar ao login";

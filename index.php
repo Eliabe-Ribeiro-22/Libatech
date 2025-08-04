@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Libetech - Página inicial</title>
+	<title>Labetech - Página inicial</title>
 	<link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
 </head>
 <body>
@@ -37,5 +37,5 @@
 <footer>Rodapé do site</footer>
 
 <?php
-sesssion_start();
+session_start();
 set_time_limit(30);
